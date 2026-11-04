@@ -1,4 +1,13 @@
 import {
+  SurvivalCompass,
+  LoadoutButtons,
+  Prologue,
+  CombatEffects,
+} from "./components/Experience";
+import { EndingScroll } from "./components/EndingScroll";
+import { keyboardAction } from "./engine/keyboard";
+import { gearCondition } from "./engine/qol";
+import {
   TalentSelect,
   JourneyPanel,
   EventPanel,
@@ -59,7 +68,7 @@ const KEY = "just-survive-v1",
 function decodeSave(raw: string): State {
   const saved = JSON.parse(raw);
   if (
-    ![1, 2].includes(saved.version) ||
+    ![1, 2, 3].includes(saved.version) ||
     !Array.isArray(saved.progress) ||
     saved.progress.length !== 12 ||
     !saved.stats
@@ -69,15 +78,18 @@ function decodeSave(raw: string): State {
   return {
     ...fresh,
     ...saved,
-    version: 2,
+    version: 3,
     talent: saved.talent ?? "engineer",
+    prologue: saved.prologue ?? (saved.talent ? "done" : "pending"),
+    bossKills:
+      saved.bossKills ?? saved.progress.filter((n: number) => n === 5).length,
     facilities: { ...fresh.facilities, ...saved.facilities },
     battle: saved.battle?.enemyStatus ? saved.battle : null,
   };
 }
-function load() {
+function load(key = KEY) {
   try {
-    const raw = localStorage.getItem(KEY);
+    const raw = localStorage.getItem(key);
     if (raw) return decodeSave(raw);
   } catch {}
   return newGame();
@@ -87,16 +99,22 @@ const costText = (b: Bag, s: State) =>
   Object.entries(b)
     .map(([k, v]) => `${items[k]?.name || k} ${inventory(s)[k] || 0}/${v}`)
     .join(" · ");
-export default function App() {
-  const [s, setS] = useState<State>(load),
+export default function App({
+  initialState,
+  storageKey = KEY,
+}: { initialState?: State; storageKey?: string } = {}) {
+  const manualKey = storageKey + "-manual";
+  const [s, setS] = useState<State>(() => initialState ?? load(storageKey)),
     [tab, setTab] = useState("camp"),
     [gm, setGM] = useState(false),
+    [settings, setSettings] = useState(false),
+    [transferCount, setTransferCount] = useState("5"),
     [muted, setMuted] = useState(false),
     [category, setCategory] = useState("补给"),
     [bagFilter, setBagFilter] = useState("全部"),
     [notice, setNotice] = useState("");
   useEffect(() => {
-    localStorage.setItem(KEY, JSON.stringify(s));
+    localStorage.setItem(storageKey, JSON.stringify(s));
   }, [s]);
   useEffect(() => {
     if (!s.journey || s.journey.incident || s.battle || s.ending) return;
@@ -121,6 +139,76 @@ export default function App() {
     );
     return () => setAmbient(false);
   }, [muted, s.talent, s.location, hour(s) > 20 || hour(s) < 5]);
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === "F9") {
+        e.preventDefault();
+        setGM((v) => !v);
+        return;
+      }
+      if (e.altKey || e.ctrlKey || e.metaKey || e.repeat) return;
+      const target = e.target as HTMLElement;
+      if (target.matches("input,textarea,select") || target.isContentEditable)
+        return;
+      if (e.key === "Escape" && (settings || gm)) {
+        e.preventDefault();
+        setSettings(false);
+        setGM(false);
+        return;
+      }
+      if (
+        s.puzzle &&
+        ["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown"].includes(e.key)
+      ) {
+        e.preventDefault();
+        const buttons = [
+          ...document.querySelectorAll<HTMLButtonElement>(
+            ".puzzle-grid button",
+          ),
+        ];
+        const i = Math.max(
+          0,
+          buttons.indexOf(document.activeElement as HTMLButtonElement),
+        );
+        const delta = (
+          { ArrowLeft: -1, ArrowRight: 1, ArrowUp: -3, ArrowDown: 3 } as Record<
+            string,
+            number
+          >
+        )[e.key];
+        buttons[(i + delta + 9) % 9]?.focus();
+        return;
+      }
+      const code =
+        document.querySelector<HTMLInputElement>('[aria-label="舱门密码"]')
+          ?.value || "";
+      const tile = Number(
+        (document.activeElement as HTMLElement)?.dataset.cell || 0,
+      );
+      const action = keyboardAction(s, e.key, code, tile);
+      if (action) {
+        e.preventDefault();
+        run(action.type, action.payload ?? "");
+      }
+    };
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
+  }, [s, settings, gm]);
+  useEffect(() => {
+    if (s.combatFx?.weak || s.combatFx?.critical) {
+      document
+        .querySelector(".battle")
+        ?.animate(
+          [
+            { transform: "translate(0)" },
+            { transform: "translate(-4px,2px)" },
+            { transform: "translate(4px,-2px)" },
+            { transform: "translate(0)" },
+          ],
+          { duration: 220 },
+        );
+    }
+  }, [s.combatFx?.serial]);
   function run(type: string, payload: string | number = "") {
     if (!muted && type !== "fishTick") {
       sound(type);
@@ -130,11 +218,11 @@ export default function App() {
     setS((prev) => act(prev, type, payload));
   }
   function save() {
-    localStorage.setItem(MANUAL, JSON.stringify(s));
+    localStorage.setItem(manualKey, JSON.stringify(s));
     setNotice("手动存档已保存");
   }
   function restore() {
-    const raw = localStorage.getItem(MANUAL);
+    const raw = localStorage.getItem(manualKey);
     if (raw) {
       try {
         setS(decodeSave(raw));
@@ -154,7 +242,8 @@ export default function App() {
     !!s.journey ||
     !!s.encounter ||
     !!s.fishing ||
-    !s.talent;
+    !s.talent ||
+    s.prologue === "playing";
   const routeLabels = {
     A: [
       "取得造船图纸",
@@ -186,6 +275,7 @@ export default function App() {
         </a>
         <div className="header-middle">
           <span className="live-dot" /> 本地生存档案{" "}
+          {s.gmUsed > 0 && <b className="debug-save">🔧 调试模式存档</b>}{" "}
           <span className="separator">/</span> 自动保存已开启
         </div>
         <div className="toolbar">
@@ -205,14 +295,42 @@ export default function App() {
             {muted ? <VolumeX size={16} /> : <Volume2 size={16} />}
           </button>
           <button
-            title="开发者工具"
-            className={gm ? "active" : ""}
-            onClick={() => setGM(!gm)}
+            title="设置"
+            aria-label="设置"
+            className={settings ? "active" : ""}
+            onClick={() => setSettings(!settings)}
           >
             <Settings size={16} />
           </button>
         </div>
       </header>
+      {settings && (
+        <div className="settings-menu">
+          <strong>荒野设置</strong>
+          <button onClick={save}>手动存档</button>
+          <button onClick={restore}>读取存档</button>
+          <button
+            onClick={() => {
+              if (confirm("重新开局？保留手动存档与继承图鉴。")) {
+                run("new");
+                setSettings(false);
+                setGM(false);
+              }
+            }}
+          >
+            重新开局
+          </button>
+          <button
+            onClick={() => {
+              setGM((v) => !v);
+              setSettings(false);
+            }}
+          >
+            开发者工具 <kbd>F9</kbd>
+          </button>
+          <small>正常游玩不会启用调试。使用GM后会永久标记本周目存档。</small>
+        </div>
+      )}
       {notice && (
         <div className="notice" onClick={() => setNotice("")}>
           {notice} · 点击关闭
@@ -311,6 +429,12 @@ export default function App() {
           ))}
         </div>
       </section>
+      {s.gmUsed > 0 && (
+        <div className="debug-indicator">
+          🔧 调试模式存档 · 本周目使用过GM工具
+        </div>
+      )}
+      <SurvivalCompass s={s} run={run} />
       <main>
         <section className="stage">
           <div className="section-heading">
@@ -325,6 +449,7 @@ export default function App() {
           </div>
           <div className="map-wrap">
             <IslandMap s={s} onSelect={(id) => !busy && run("select", id)} />
+            <CombatEffects fx={s.combatFx} />
             {s.journey && !s.battle && <JourneyPanel s={s} run={run} />}
             <div className="map-caption">
               <span>探索未知，记住归途。</span>
@@ -342,7 +467,7 @@ export default function App() {
               <div
                 className={
                   "overlay battle" +
-                  (s.battle.message.includes("暴击") ? " critical" : "")
+                  (s.combatFx?.critical || s.combatFx?.weak ? " critical" : "")
                 }
               >
                 <span className="eyebrow">
@@ -355,7 +480,17 @@ export default function App() {
                   {s.battle.enemy.attack}{" "}
                   {s.battle.enemy.poison ? "· 有毒" : ""}
                 </p>
-                <div className="enemy-meter">
+                <div
+                  key={`battle-bar-${s.battle.turn}`}
+                  className={
+                    "enemy-meter" +
+                    (s.combatFx &&
+                    s.combatFx.serial === s.turns &&
+                    s.combatFx.damage > 0
+                      ? " struck"
+                      : "")
+                  }
+                >
                   <i
                     style={{
                       width: `${(s.battle.hp / s.battle.enemy.hp) * 100}%`,
@@ -398,7 +533,10 @@ export default function App() {
                     </div>
                   ))}
                 </div>
-                <p className="combat-message" key={s.battle.turn}>
+                <p
+                  className="combat-message"
+                  key={`battle-message-${s.battle.turn}`}
+                >
                   {s.battle.message}
                 </p>
                 <div className="combat-buttons">
@@ -420,10 +558,35 @@ export default function App() {
                     ["flee", "尝试逃离"],
                   ].map(([id, name]) => (
                     <button key={id} onClick={() => run("combat", id)}>
-                      {name}
+                      {name}{" "}
+                      <kbd>
+                        {(
+                          {
+                            advance: "A",
+                            retreat: "D",
+                            heavy: "Q",
+                            ranged: "W",
+                            wolf: "E",
+                            skill: "F",
+                            thrust: "T",
+                            net: "G",
+                            flee: "Esc",
+                          } as Record<string, string>
+                        )[id] || ""}
+                      </kbd>
                     </button>
                   ))}
                 </div>
+                <button
+                  disabled={!keyboardAction(s, "r")}
+                  className="combat-medicine"
+                  onClick={() => {
+                    const a = keyboardAction(s, "r");
+                    if (a) run(a.type, a.payload ?? "");
+                  }}
+                >
+                  使用合适药剂 <kbd>R</kbd>
+                </button>
                 <small>
                   长柄武器在距离2可压制近战敌人；战斗补给在右侧行囊使用。
                 </small>
@@ -439,12 +602,14 @@ export default function App() {
                 <div className="puzzle-grid">
                   {s.board.map((lit, i) => (
                     <button
+                      data-cell={i}
                       aria-label={`机关${i + 1} ${lit ? "明" : "暗"}`}
                       key={i}
                       className={lit ? "lit" : ""}
                       onClick={() => run("tile", i)}
                     >
                       {lit ? <Sun /> : <Moon />}
+                      <kbd>{i + 1}</kbd>
                     </button>
                   ))}
                 </div>
@@ -452,7 +617,9 @@ export default function App() {
                   已用 <b>{s.moves}</b> 步 / 十步内开启隐藏暗门
                 </p>
                 <small>超过十步解开，将唤醒沉睡的火山。</small>
-                <button onClick={() => run("closePuzzle")}>暂离机关</button>
+                <button onClick={() => run("closePuzzle")}>
+                  暂离机关 <kbd>Esc</kbd>
+                </button>
               </div>
             )}
           </div>
@@ -482,6 +649,7 @@ export default function App() {
                 <span key={k}>{items[k].name}</span>
               ))}
             </div>
+            <LoadoutButtons s={s} run={run} target={zone.id} busy={busy} />
             <div className="travel-row">
               <div>
                 <span>
@@ -498,7 +666,8 @@ export default function App() {
                   disabled={busy}
                   onClick={() => run("travel", zone.id)}
                 >
-                  整装出发 <ChevronRight size={16} />
+                  整装出发 <kbd>Space</kbd>
+                  <ChevronRight size={16} />
                 </button>
               ) : s.location > 0 ? (
                 <button
@@ -509,6 +678,7 @@ export default function App() {
                   {s.progress[s.location] === 5
                     ? "快速采集 / 重访事件"
                     : "深入探索"}{" "}
+                  <kbd>Space</kbd>
                   <ChevronRight size={16} />
                 </button>
               ) : (
@@ -522,6 +692,26 @@ export default function App() {
               )}
             </div>
           </div>
+          {zone.id > 0 && s.progress[zone.id] === 5 && (
+            <div className="sweep-action">
+              <button
+                className="primary"
+                disabled={
+                  busy ||
+                  !(s.location === zone.id || (s.location === 0 && s.wolf > 0))
+                }
+                onClick={() => run("sweep", zone.id)}
+              >
+                ⚡{" "}
+                {s.location === 0
+                  ? "委托白狼 / 整轮扫荡"
+                  : "安全扫荡 / 整轮采集"}
+              </button>
+              <small>
+                2小时 · 饱食/水分双倍消耗 · 无战斗奇遇 · 剧情需亲自重访
+              </small>
+            </div>
+          )}
           <div className="field-actions">
             <button
               disabled={busy || s.location === 0}
@@ -762,13 +952,20 @@ export default function App() {
                 </div>
                 <div className="subheading">
                   <h3>出门背包</h3>
-                  <button
-                    disabled={busy || s.location !== 0}
-                    onClick={() => run("store")}
-                  >
-                    一键存入
-                  </button>
                 </div>
+                <div className="batch-selector">
+                  <span>批量存取</span>
+                  {["1", "5", "10", "all"].map((n) => (
+                    <button
+                      className={transferCount === n ? "chosen" : ""}
+                      key={n}
+                      onClick={() => setTransferCount(n)}
+                    >
+                      {n === "all" ? "全部" : n}
+                    </button>
+                  ))}
+                </div>
+                <LoadoutButtons s={s} run={run} target={zone.id} busy={busy} />
                 <Inventory bag={s.bag} storage={false} />
                 <div className="subheading">
                   <h3>营地储物箱</h3>
@@ -902,7 +1099,7 @@ export default function App() {
             )}
           </div>
           <div className="console-footer">
-            <span className="live-dot" /> 离线存档 · 无需网络 <span>v2.0</span>
+            <span className="live-dot" /> 离线存档 · 无需网络 <span>v3.0</span>
           </div>
         </aside>
       </main>
@@ -913,54 +1110,15 @@ export default function App() {
       </footer>
       {!s.talent && <TalentSelect run={run} />}
       {s.defense && !s.ending && <DefensePanel s={s} run={run} />}
+      {s.prologue === "playing" && <Prologue run={run} muted={muted} />}
       {s.ending && (
-        <div className={"ending-screen ending-" + s.ending}>
-          <div className="ending-art">
-            <Compass size={100} />
-          </div>
-          <span className="eyebrow">
-            {s.ending === "death" ? "THE LAST PAGE" : "A NEW HORIZON"}
-          </span>
-          <h1>{endingNames[s.ending]}</h1>
-          <p>
-            {
-              {
-                A: "风灌满了帆。你最后望向那一点火光，然后转身，驶向世界。",
-                B: "补给船穿过晨雾。你将硬盘藏进制服，终于看见陆地的灯。",
-                C: "炽热的海浪托起隔热舱。毁灭的力量，成为你通向自由的航道。",
-                D: "七颗星照亮夜空。神龙穿云而至，你的荒野日记写下了不可思议的结尾。",
-                death: "孤岛记住了你的勇气。下一次，黄昏之前，记得回家。",
-              }[s.ending]
-            }
-          </p>
-          <div className="ending-stats">
-            <span>
-              存活 <b>{day(s)} 天</b>
-            </span>
-            <span>
-              击败 <b>{s.kills} 敌人</b>
-            </span>
-            <span>
-              制造 <b>{s.crafted} 次</b>
-            </span>
-            <span>
-              探索 <b>{s.progress.filter((n) => n === 5).length} 区域</b>
-            </span>
-          </div>
-          <span className="badge">
-            <Star size={16} />{" "}
-            {s.ending === "death" ? "荒野行者" : "孤岛幸存者 · " + s.ending}
-          </span>
-          <button
-            className="primary"
-            onClick={() => {
-              if (confirm("开启新的日记？")) run("new");
-            }}
-          >
-            开启新的日记
-          </button>
-          <button onClick={restore}>读取手动存档</button>
-        </div>
+        <EndingScroll
+          s={s}
+          onNew={() => {
+            if (confirm("开启新的日记？")) run("new");
+          }}
+          onRestore={restore}
+        />
       )}
     </div>
   );
@@ -980,7 +1138,11 @@ export default function App() {
               <strong>
                 {items[k].name} <em>×{n}</em>
               </strong>
-              <small>{(items[k].weight * n).toFixed(1)} kg</small>
+              <small>
+                {(items[k].weight * n).toFixed(1)} kg
+                {(items[k].kind === "武器" || k === "knife") &&
+                  ` · 耐久 ${gearCondition(s, k).toFixed(0)}%`}
+              </small>
             </div>
             <div>
               {items[k].heal && (
@@ -1005,11 +1167,32 @@ export default function App() {
                   装备
                 </button>
               )}
+              {(items[k].kind === "武器" || k === "knife") &&
+                gearCondition(s, k) < 100 && (
+                  <button
+                    disabled={
+                      busy ||
+                      s.location !== 0 ||
+                      s.facilities.work < 2 ||
+                      !has(s, { wood: 2, iron: 1 })
+                    }
+                    onClick={() => run("repairGear", k)}
+                    title="木材2、生铁1、0.5小时"
+                  >
+                    修复
+                  </button>
+                )}
               <button
                 disabled={busy || s.location !== 0}
-                onClick={() => run(storage ? "take" : "deposit", k)}
+                onClick={() =>
+                  run(
+                    "transfer",
+                    `${storage ? "take" : "put"}:${k}:${transferCount}`,
+                  )
+                }
               >
-                {storage ? "取1" : "存1"}
+                {storage ? "取" : "存"}
+                {transferCount === "all" ? "全部" : transferCount}
               </button>
             </div>
           </div>
@@ -1023,7 +1206,7 @@ export default function App() {
         {(["A", "B", "C", "D"] as const).map((key) => (
           <details key={key}>
             <summary>
-              <span>{key}</span>
+              <span onClick={() => run("trackRoute", key)}>{key}</span>
               {endingNames[key].split(" · ")[1]}
               <small>
                 {checks[key].filter(Boolean).length}/{checks[key].length}

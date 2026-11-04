@@ -16,7 +16,8 @@ import { items, zones, enemies, facilities } from "../src/data";
 import { pages, talents } from "../src/data/lore";
 import type { State } from "../src/types";
 // Focused rule fixtures below isolate states. The full-campaign suite never mutates game state.
-const start = (talent = "engineer") => act(newGame(42), "talent", talent);
+const start = (talent = "engineer") =>
+  act(act(newGame(42), "talent", talent), "continuePrologue");
 function travel(s: State, to: number) {
   s = act(s, "travel", to);
   while (s.journey) {

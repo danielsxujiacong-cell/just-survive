@@ -15,15 +15,18 @@ import type { State, Bag } from "../src/types";
 export class SurvivorAgent {
   private state: State;
   readonly trace: string[] = [];
+  readonly frames:Record<string,State>={};
   readonly actions: Record<string, number> = {};
   private crafting = false;
   constructor(
     readonly seed: number,
     readonly route: "A" | "B" | "C" | "D",
     talent = "engineer",
+    readonly useQoL = false,
   ) {
     this.state = newGame(seed);
     this.do("talent", talent);
+    this.do("continuePrologue");
   }
   get s(): Readonly<State> {
     return this.state;
@@ -33,6 +36,7 @@ export class SurvivorAgent {
   }
   do(type: string, payload: string | number = "") {
     assert.ok(!type.startsWith("gm"), "GM actions are forbidden");
+    if(this.useQoL){for(const key of ['puzzle','battle'] as const)if(this.state[key]&&!this.frames[key])this.frames[key]=structuredClone(this.state);if(type==='ending'&&!this.frames.beforeEnding)this.frames.beforeEnding=structuredClone(this.state);}
     this.state = act(this.state, type, payload);
     this.actions[type] = (this.actions[type] || 0) + 1;
     this.trace.push(
@@ -158,6 +162,13 @@ export class SurvivorAgent {
     }
   }
   take(id: string, count: number) {
+    if (this.useQoL) {
+      const missing = Math.max(0, count - (this.state.bag[id] || 0));
+      if (missing) this.do("transfer", `take:${id}:${missing}`);
+      assert.ok((this.state.bag[id] || 0) >= count, `Cannot bulk take ${id}`);
+      return;
+    }
+
     while ((this.state.bag[id] || 0) < count) {
       const before = this.state.bag[id] || 0;
       this.do("take", id);
@@ -189,7 +200,7 @@ export class SurvivorAgent {
     if (this.state.puzzle) this.solve();
     this.settle();
     this.travel(0);
-    this.do("store");
+    this.do(this.useQoL ? "unload" : "store");
     this.recover();
   }
   provision() {
@@ -275,6 +286,17 @@ export class SurvivorAgent {
     assert.equal(this.state.progress[z], 5);
   }
   farm(z: number, rounds = 1) {
+    if (this.useQoL && this.state.wolf && this.state.progress[z] === 5) {
+      if (this.state.location !== 0) this.home();
+      this.provision();
+      for (let i = 0; i < rounds; i++) {
+        this.care();
+        this.do("sweep", z);
+      }
+      this.recover();
+      return;
+    }
+
     if (this.state.location !== 0) this.home();
     this.provision();
     this.travel(z);

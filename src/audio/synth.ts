@@ -120,3 +120,27 @@ export function setAmbient(enabled: boolean, scene = "sea") {
     scene === "camp" ? 900 : 1300,
   );
 }
+export function prologueThunder() {
+  const c = context(),
+    t = c.currentTime;
+  const buffer = c.createBuffer(1, c.sampleRate * 3, c.sampleRate),
+    d = buffer.getChannelData(0);
+  let low = 0;
+  for (let i = 0; i < d.length; i++) {
+    low = (low + (Math.random() * 2 - 1) * 0.07) / 1.07;
+    d[i] = low * Math.exp((-i / d.length) * 4);
+  }
+  const source = c.createBufferSource(),
+    filter = c.createBiquadFilter(),
+    gain = c.createGain();
+  source.buffer = buffer;
+  filter.type = "lowpass";
+  filter.frequency.setValueAtTime(1800, t);
+  filter.frequency.exponentialRampToValueAtTime(80, t + 2);
+  gain.gain.setValueAtTime(0.25, t);
+  gain.gain.exponentialRampToValueAtTime(0.001, t + 3);
+  source.connect(filter);
+  filter.connect(gain);
+  gain.connect(c.destination);
+  source.start();
+}

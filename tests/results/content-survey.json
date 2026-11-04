@@ -34,6 +34,7 @@
   ],
   "actionCounts": {
     "talent": 1,
+    "continuePrologue": 1,
     "upgrade": 8,
     "craft": 56,
     "equip": 17,

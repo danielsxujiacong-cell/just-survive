@@ -23,13 +23,15 @@ export function TalentSelect({ run }: { run: Run }) {
         <p>选择你的过去。它会改变你在孤岛上的生存方式。</p>
       </div>
       <div className="talent-grid">
-        {talents.map((t) => (
+        {talents.map((t, i) => (
           <button key={t.id} onClick={() => run("talent", t.id)}>
             <span className="talent-symbol">{t.icon}</span>
             <h2>{t.name}</h2>
             <small>{t.subtitle}</small>
             <p>{t.description}</p>
-            <b>以此身份醒来 →</b>
+            <b>
+              以此身份醒来 → <kbd>{i + 1}</kbd>
+            </b>
           </button>
         ))}
       </div>
@@ -127,6 +129,7 @@ export function EventPanel({ s, run }: { s: State; run: Run }) {
             onClick={() => run("chooseEvent", i + ":" + code)}
           >
             <b>{String.fromCharCode(65 + i)}.</b>
+            <kbd>{i + 1}</kbd>
             <span>
               {c.label}
               <small>
@@ -179,9 +182,11 @@ export function FishingPanel({ s, run }: { s: State; run: Run }) {
       </div>
       <p aria-live="polite">{f.last}</p>
       <button className="primary" onClick={() => run("reel")}>
-        稳住 · 收竿
+        稳住 · 收竿 <kbd>Space</kbd>
       </button>
-      <button onClick={() => run("cancelFish")}>放开鱼线</button>
+      <button onClick={() => run("cancelFish")}>
+        放开鱼线 <kbd>Esc</kbd>
+      </button>
     </div>
   );
 }
@@ -220,14 +225,15 @@ export function BattleAim({ s, run }: { s: State; run: Run }) {
         {b.environment} · 瞄准弱点，控制距离
       </div>
       <div className="aim-options">
-        {(["head", "limbs", "torso"] as const).map((k) => (
+        {(["head", "torso", "limbs"] as const).map((k) => (
           <button
             key={k}
             className={b.aim === k ? "aim-selected" : ""}
             onClick={() => run("aim", k)}
           >
             <Target size={12} />
-            {names[k]}
+            {names[k]}{" "}
+            <kbd>{k === "head" ? "1" : k === "torso" ? "2" : "3"}</kbd>
             <small>
               {k === "head"
                 ? "命中-25% / 伤害×1.6 / 概率眩晕"

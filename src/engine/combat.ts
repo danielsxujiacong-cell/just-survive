@@ -163,6 +163,28 @@ export function combatTurn(s: State, action: string, onWin: () => void) {
       } else b.message += " · 未命中";
     }
   }
+  if (attacking) {
+    const weaponId =
+      action === "ranged" || gunSkill ? s.equipment.ranged : s.equipment.melee;
+    if (weaponId)
+      s.durability[weaponId] = Math.max(
+        0,
+        (s.durability[weaponId] ?? 100) - 0.5,
+      );
+    s.combatFx = {
+      serial: s.turns,
+      kind: !hit
+        ? "miss"
+        : action === "wolf"
+          ? "wolf"
+          : action === "ranged" || gunSkill
+            ? "ranged"
+            : "melee",
+      critical: b.message.includes("暴击"),
+      weak: hit > 0 && b.aim !== "torso",
+      damage: hit,
+    };
+  }
   if (es.bleed) {
     b.hp -= 4;
     es.bleed--;

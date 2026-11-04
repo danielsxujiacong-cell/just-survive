@@ -126,6 +126,7 @@ export function advanced(
       )
         return true;
       s.talent = id;
+      s.prologue = "playing";
       if (id === "athlete") s.stats.hp = 120;
       if (id === "botanist") add(s, "seed", 3);
       if (id === "sailor") {

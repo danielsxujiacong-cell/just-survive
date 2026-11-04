@@ -58,7 +58,7 @@ export type Battle = {
   origin: "region" | "journey";
 };
 export type State = {
-  version: 2;
+  version: 3;
   time: number;
   location: number;
   selected: number;
@@ -110,6 +110,25 @@ export type State = {
   firewall: number;
   gmUsed: number;
   turns: number;
+  trackedRoute: "A" | "B" | "C" | "D";
+  durability: Record<string, number>;
+  loadoutReport: {
+    target: number;
+    weight: number;
+    budget: number;
+    missing: string[];
+  } | null;
+  sweeps: number;
+  prologue: "pending" | "playing" | "done";
+  milestones: { key: string; day: number; text: string }[];
+  bossKills: number;
+  combatFx: {
+    serial: number;
+    kind: "melee" | "ranged" | "wolf" | "miss";
+    critical: boolean;
+    weak: boolean;
+    damage: number;
+  } | null;
 };
 export type Statuses = {
   bleed: number;

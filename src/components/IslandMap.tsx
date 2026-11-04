@@ -1,3 +1,5 @@
+import { TerrainDefs, TerrainLayer } from "./MapTerrain";
+import { routeTargets } from "../engine/qol";
 import { zones } from "../data";
 import type { State } from "../types";
 export function IslandMap({
@@ -15,6 +17,7 @@ export function IslandMap({
       aria-label="可点击的孤岛探索海图"
     >
       <defs>
+        <TerrainDefs />
         <pattern id="sea" width="50" height="35" patternUnits="userSpaceOnUse">
           <path
             d="M0 20 Q12 13 24 20 T48 20"
@@ -52,6 +55,7 @@ export function IslandMap({
         strokeWidth="2"
         filter="url(#shadow)"
       />
+      <TerrainLayer />
       {[0.93, 0.81, 0.67, 0.5].map((scale, i) => (
         <path
           key={scale}
@@ -105,6 +109,9 @@ export function IslandMap({
             }}
             className={
               "map-node" +
+              (routeTargets(s, s.trackedRoute).includes(z.id)
+                ? " goal-highlight"
+                : "") +
               (s.progress[z.id] === 4
                 ? " boss-warning"
                 : s.progress[z.id] < 5
@@ -123,7 +130,7 @@ export function IslandMap({
               textAnchor="middle"
               y="5"
               fill={s.selected === z.id ? "#192824" : "#e1d6b7"}
-              fontSize="16"
+              fontSize="19"
             >
               {z.id === 0
                 ? "⌂"
@@ -135,7 +142,7 @@ export function IslandMap({
               textAnchor="middle"
               y="38"
               fill="#e6dfc6"
-              fontSize="13"
+              fontSize="18"
               letterSpacing="1"
             >
               {z.name}
@@ -153,7 +160,20 @@ export function IslandMap({
                 ))}
               </g>
             )}
-            {s.location === z.id && <circle cy="-30" r="3" fill="#e8c88a" />}
+            {s.location === z.id && (
+              <g className="explorer-beacon" transform="translate(0 -35)">
+                <circle r="15" fill="#182e27" stroke="#e6c78c" />
+                <path
+                  d="M0-11C9-3 9 4 3 9C-9 12-12 1-4-5C-4 2 1 2 0-11Z"
+                  fill="#e5b96f"
+                />
+                <path
+                  d="M-9 13L9 9M-9 9L9 13"
+                  stroke="#d9ca9b"
+                  strokeWidth="2"
+                />
+              </g>
+            )}
           </g>
         ))}
       {s.journey &&
@@ -178,6 +198,7 @@ export function IslandMap({
                 stroke="#f1cf8a"
                 strokeWidth="2"
                 strokeDasharray="5 7"
+                className="flowing-route"
               />
               {Array.from({ length: j.stages - 1 }, (_, i) => {
                 const u = (i + 1) / j.stages;
@@ -195,6 +216,22 @@ export function IslandMap({
                   />
                 );
               })}
+              <g
+                className="journey-light"
+                fill="#fff0b0"
+                stroke="#dbb96c"
+                strokeWidth="1"
+                pointerEvents="none"
+              >
+                <circle r="4" />
+                <path d="M-10-4L-3 0-10 4" fill="none" strokeWidth="2" />
+                <animateMotion
+                  dur="2.5s"
+                  repeatCount="indefinite"
+                  rotate="auto"
+                  path={`M${sx} ${sy}Q${cx} ${cy} ${ex} ${ey}`}
+                />
+              </g>
               <g
                 className="marcher"
                 style={{ transform: `translate(${x}px,${y}px)` }}
@@ -231,7 +268,7 @@ export function IslandMap({
           textAnchor="middle"
           fill="#b4bba5"
           stroke="none"
-          fontSize="13"
+          fontSize="18"
         >
           N
         </text>

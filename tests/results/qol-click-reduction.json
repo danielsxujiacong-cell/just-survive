@@ -1,0 +1,46 @@
+[
+  {
+    "route": "A",
+    "seed": 42,
+    "baselineActions": 1319,
+    "qolActions": 571,
+    "reductionPercent": 57,
+    "baselineDay": 15,
+    "qolDay": 13,
+    "gm": 0,
+    "sweeps": 15
+  },
+  {
+    "route": "B",
+    "seed": 42,
+    "baselineActions": 1047,
+    "qolActions": 633,
+    "reductionPercent": 40,
+    "baselineDay": 16,
+    "qolDay": 16,
+    "gm": 0,
+    "sweeps": 9
+  },
+  {
+    "route": "C",
+    "seed": 42,
+    "baselineActions": 1094,
+    "qolActions": 655,
+    "reductionPercent": 40,
+    "baselineDay": 14,
+    "qolDay": 14,
+    "gm": 0,
+    "sweeps": 9
+  },
+  {
+    "route": "D",
+    "seed": 42,
+    "baselineActions": 1252,
+    "qolActions": 855,
+    "reductionPercent": 32,
+    "baselineDay": 19,
+    "qolDay": 30,
+    "gm": 0,
+    "sweeps": 12
+  }
+]

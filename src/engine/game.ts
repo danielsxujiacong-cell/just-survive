@@ -1,3 +1,4 @@
+import { qol } from "./qol";
 import {
   advanced,
   startJourney,
@@ -53,6 +54,8 @@ export function log(s: State, t: string) {
 export function add(s: State, k: string, n: number) {
   if (n <= 0) return;
   if (!s.seenItems.includes(k)) s.seenItems.push(k);
+  if (items[k]?.kind === "武器" || items[k]?.kind === "防具")
+    s.durability[k] = 100;
   const b = s.location === 0 && !s.journey ? s.storage : s.bag;
   if (
     (s.location !== 0 || s.journey) &&
@@ -197,7 +200,7 @@ export function newGame(seed = Date.now() >>> 0): State {
   const board = Array(9).fill(true);
   [0, 4, 8].forEach((i) => toggle(board, i));
   return {
-    version: 2,
+    version: 3,
     time: 8,
     location: 0,
     selected: 1,
@@ -291,6 +294,14 @@ export function newGame(seed = Date.now() >>> 0): State {
     firewall: 0,
     gmUsed: 0,
     turns: 0,
+    trackedRoute: "A",
+    durability: { knife: 100 },
+    loadoutReport: null,
+    sweeps: 0,
+    prologue: "pending",
+    milestones: [],
+    bossKills: 0,
+    combatFx: null,
   };
 }
 export function routeChecks(s: State) {
@@ -378,7 +389,7 @@ function loot(s: State) {
         .join("、"),
   );
 }
-export function act(
+function reduceAction(
   input: State,
   type: string,
   payload: string | number = "",
@@ -395,7 +406,16 @@ export function act(
   }
   if (s.ending && type !== "gmHeal") return s;
   const id = String(payload);
+  if (type === "trackRoute" && ["A", "B", "C", "D"].includes(id)) {
+    s.trackedRoute = id as State["trackedRoute"];
+    return s;
+  }
   if (!s.talent && type !== "talent") return s;
+  if (type === "continuePrologue") {
+    s.prologue = "done";
+    return s;
+  }
+  if (s.prologue === "playing") return s;
   if (s.battle && !["combat", "aim", "use", "gmHeal"].includes(type)) return s;
   if (s.puzzle && !["tile", "closePuzzle", "gmPuzzle", "gmHeal"].includes(type))
     return s;
@@ -417,7 +437,7 @@ export function act(
     return s;
   if (type.startsWith("gm")) s.gmUsed++;
   s.turns++;
-  if (advanced(s, type, payload)) {
+  if (qol(s, type, payload) || advanced(s, type, payload)) {
     checkLife(s);
     return s;
   }
@@ -737,5 +757,34 @@ export function act(
       break;
   }
   checkLife(s);
+  return s;
+}
+
+export function act(
+  input: State,
+  type: string,
+  payload: string | number = "",
+): State {
+  const s = reduceAction(input, type, payload);
+  const mark = (key: string, text: string) => {
+    if (!s.milestones.some((m) => m.key === key))
+      s.milestones.push({ key, day: day(s), text });
+  };
+  if (type !== "new") {
+    if (!input.wolf && s.wolf) mark("wolf", "白狼成为同行的伙伴");
+    if (!input.camel && s.camel) mark("camel", "解救并驯服沙漠骆驼");
+    if (!input.puzzleDone && s.puzzleDone)
+      mark("puzzle", `日月明暗盘于${s.moves}步解开`);
+    if (!input.lab && s.lab) mark("lab", "发现破风口研究所");
+    if (input.friendship < 5 && s.friendship === 5)
+      mark("kuru", "库鲁赠予千年铁木");
+    for (let z = 1; z < 12; z++)
+      if (input.progress[z] < 5 && s.progress[z] === 5) {
+        s.bossKills++;
+        mark("zone-" + z, "攻克" + zones[z].name + "守关战");
+      }
+    if (!input.ending && s.ending && s.ending !== "death")
+      mark("ending", "逃生成功 · " + s.ending);
+  }
   return s;
 }

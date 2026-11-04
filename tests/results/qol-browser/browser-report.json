@@ -1,0 +1,121 @@
+{
+  "checkedAt": "2026-11-04T06:09:50.008Z",
+  "sourceSHA256": "fa4736a878c79e202dcdf254a0a001497e5c6b6a03c35494dc89e07e26914c16",
+  "productionUrl": "http://127.0.0.1:4175/",
+  "replayHarnessUrl": "http://127.0.0.1:5174/tests/browser-harness.html",
+  "productionAssets": [
+    "index-BxmeTfrw.css",
+    "index-C_KExmKy.js"
+  ],
+  "checks": {
+    "dynamicGuideHints": {
+      "newGame": 3,
+      "matureGame": 2,
+      "readyToEscape": true
+    },
+    "routeBHighlightsCave": true,
+    "bulkTake75AndUnload": true,
+    "loadoutWith60PercentMinimumHeadroom": true,
+    "wolfSweepPaysTwoHoursAndDoubleSurvivalCosts": true,
+    "terrainColorsLandmarksAndCurrentPlayerFlame": true,
+    "movingRouteArrowLight": true,
+    "keyboardTalent5AndPrologueSpace": true,
+    "keyboardCombat3AQAndWeakHitEffects": true,
+    "keyboardPuzzle159SolvesInThreeMoves": true,
+    "keyboardFishingSpaceAndEscape": true,
+    "hiddenGMThenF9AndStickyDebugMarker": true,
+    "normalSimulationReplayDoesNotOverwritePlayerSave": true,
+    "fourEndings": [
+      {
+        "route": "A",
+        "title": "乘风破浪 · 方舟远航",
+        "timelineRows": 14,
+        "sceneLabel": "乘风破浪 · 方舟远航"
+      },
+      {
+        "route": "B",
+        "title": "黎明潜行 · 破风口物资船",
+        "timelineRows": 15,
+        "sceneLabel": "黎明潜行 · 破风口物资船"
+      },
+      {
+        "route": "C",
+        "title": "绝境冲浪 · 火山大爆发",
+        "timelineRows": 14,
+        "sceneLabel": "绝境冲浪 · 火山大爆发"
+      },
+      {
+        "route": "D",
+        "title": "神龙降临 · 七星连珠",
+        "timelineRows": 16,
+        "sceneLabel": "神龙降临 · 七星连珠"
+      }
+    ],
+    "actualPngDownloads": {
+      "A": {
+        "width": 1000,
+        "height": 1250,
+        "bytes": 132809
+      },
+      "D": {
+        "width": 1000,
+        "height": 1250,
+        "bytes": 157598
+      }
+    }
+  },
+  "fixedDuringVerification": [
+    "Duplicate React keys for combat message and enemy health animation",
+    "Late-game guide now always gives two to three suggestions",
+    "Full-screen scenes lock background page scrolling"
+  ],
+  "qolNormalCampaignComparisons": [
+    {
+      "route": "A",
+      "seed": 42,
+      "baselineActions": 1319,
+      "qolActions": 571,
+      "reductionPercent": 57,
+      "baselineDay": 15,
+      "qolDay": 13,
+      "gm": 0,
+      "sweeps": 15
+    },
+    {
+      "route": "B",
+      "seed": 42,
+      "baselineActions": 1047,
+      "qolActions": 633,
+      "reductionPercent": 40,
+      "baselineDay": 16,
+      "qolDay": 16,
+      "gm": 0,
+      "sweeps": 9
+    },
+    {
+      "route": "C",
+      "seed": 42,
+      "baselineActions": 1094,
+      "qolActions": 655,
+      "reductionPercent": 40,
+      "baselineDay": 14,
+      "qolDay": 14,
+      "gm": 0,
+      "sweeps": 9
+    },
+    {
+      "route": "D",
+      "seed": 42,
+      "baselineActions": 1252,
+      "qolActions": 855,
+      "reductionPercent": 32,
+      "baselineDay": 19,
+      "qolDay": 30,
+      "gm": 0,
+      "sweeps": 12
+    }
+  ],
+  "qaConsoleWarningsAndErrors": [],
+  "productionConsoleWarningsAndErrors": [],
+  "passed": true
+}

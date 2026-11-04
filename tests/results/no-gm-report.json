@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-11-04T05:26:41.190Z",
-  "sourceSHA256": "de52b94289cd8be6c876c3f5a1e9c30a56328dd642e3ee1d1bc78d24dc590b75",
+  "generatedAt": "2026-11-04T06:05:40.031Z",
+  "sourceSHA256": "fa4736a878c79e202dcdf254a0a001497e5c6b6a03c35494dc89e07e26914c16",
   "expectedCampaigns": 240,
   "passRate": 1,
   "autoRescues": 2,
@@ -58,6 +58,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 75,
         "equip": 5,
@@ -115,6 +116,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 73,
         "equip": 5,
@@ -173,6 +175,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 70,
         "equip": 5,
@@ -230,6 +233,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 74,
         "equip": 5,
@@ -287,6 +291,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 76,
         "equip": 5,
@@ -343,6 +348,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 71,
         "equip": 5,
@@ -400,6 +406,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 71,
         "equip": 5,
@@ -457,6 +464,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 79,
         "equip": 5,
@@ -514,6 +522,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 73,
         "equip": 5,
@@ -571,6 +580,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 71,
         "equip": 5,
@@ -629,6 +639,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 75,
         "equip": 5,
@@ -687,6 +698,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 72,
         "equip": 5,
@@ -744,6 +756,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 73,
         "equip": 5,
@@ -801,6 +814,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 77,
         "equip": 5,
@@ -857,6 +871,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 77,
         "equip": 5,
@@ -914,6 +929,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 68,
         "equip": 5,
@@ -971,6 +987,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 73,
         "equip": 5,
@@ -1029,6 +1046,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 67,
         "equip": 5,
@@ -1087,6 +1105,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 79,
         "equip": 5,
@@ -1145,6 +1164,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 82,
         "equip": 5,
@@ -1202,6 +1222,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 83,
         "equip": 5,
@@ -1259,6 +1280,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 73,
         "equip": 5,
@@ -1317,6 +1339,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 78,
         "equip": 5,
@@ -1375,6 +1398,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 83,
         "equip": 5,
@@ -1433,6 +1457,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 74,
         "equip": 5,
@@ -1491,6 +1516,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 74,
         "equip": 5,
@@ -1549,6 +1575,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 71,
         "equip": 5,
@@ -1607,6 +1634,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 73,
         "equip": 5,
@@ -1664,6 +1692,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 78,
         "equip": 5,
@@ -1722,6 +1751,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 69,
         "equip": 5,
@@ -1780,6 +1810,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 80,
         "equip": 5,
@@ -1838,6 +1869,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 71,
         "equip": 5,
@@ -1895,6 +1927,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 71,
         "equip": 5,
@@ -1951,6 +1984,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 70,
         "equip": 5,
@@ -2009,6 +2043,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 69,
         "equip": 5,
@@ -2066,6 +2101,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 66,
         "equip": 5,
@@ -2123,6 +2159,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 76,
         "equip": 5,
@@ -2180,6 +2217,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 75,
         "equip": 5,
@@ -2237,6 +2275,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 75,
         "equip": 5,
@@ -2295,6 +2334,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 67,
         "equip": 5,
@@ -2352,6 +2392,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 74,
         "equip": 5,
@@ -2409,6 +2450,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 68,
         "equip": 5,
@@ -2467,6 +2509,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 81,
         "equip": 5,
@@ -2525,6 +2568,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 72,
         "equip": 5,
@@ -2583,6 +2627,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 77,
         "equip": 5,
@@ -2641,6 +2686,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 74,
         "equip": 5,
@@ -2699,6 +2745,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 69,
         "equip": 5,
@@ -2757,6 +2804,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 69,
         "equip": 5,
@@ -2813,6 +2861,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 77,
         "equip": 5,
@@ -2870,6 +2919,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 78,
         "equip": 5,
@@ -2926,6 +2976,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 79,
         "equip": 5,
@@ -2984,6 +3035,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 76,
         "equip": 5,
@@ -3040,6 +3092,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 74,
         "equip": 5,
@@ -3097,6 +3150,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 69,
         "equip": 5,
@@ -3154,6 +3208,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 69,
         "equip": 5,
@@ -3212,6 +3267,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 75,
         "equip": 5,
@@ -3269,6 +3325,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 79,
         "equip": 5,
@@ -3327,6 +3384,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 76,
         "equip": 5,
@@ -3384,6 +3442,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 66,
         "equip": 5,
@@ -3442,6 +3501,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 77,
         "equip": 5,
@@ -3499,6 +3559,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 54,
         "equip": 5,
@@ -3557,6 +3618,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 50,
         "equip": 5,
@@ -3615,6 +3677,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 45,
         "equip": 5,
@@ -3672,6 +3735,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 50,
         "equip": 5,
@@ -3729,6 +3793,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 47,
         "equip": 5,
@@ -3785,6 +3850,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 46,
         "equip": 5,
@@ -3842,6 +3908,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 49,
         "equip": 5,
@@ -3899,6 +3966,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 56,
         "equip": 5,
@@ -3956,6 +4024,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 55,
         "equip": 5,
@@ -4012,6 +4081,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 47,
         "equip": 5,
@@ -4070,6 +4140,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 57,
         "equip": 5,
@@ -4129,6 +4200,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 51,
         "equip": 5,
@@ -4186,6 +4258,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 51,
         "equip": 5,
@@ -4243,6 +4316,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 54,
         "equip": 5,
@@ -4300,6 +4374,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 54,
         "equip": 5,
@@ -4357,6 +4432,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 53,
         "equip": 5,
@@ -4415,6 +4491,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 49,
         "equip": 5,
@@ -4474,6 +4551,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 46,
         "equip": 5,
@@ -4532,6 +4610,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 55,
         "equip": 5,
@@ -4591,6 +4670,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 58,
         "equip": 5,
@@ -4649,6 +4729,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 57,
         "equip": 5,
@@ -4706,6 +4787,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 53,
         "equip": 5,
@@ -4764,6 +4846,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 49,
         "equip": 5,
@@ -4822,6 +4905,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 59,
         "equip": 5,
@@ -4881,6 +4965,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 53,
         "equip": 5,
@@ -4939,6 +5024,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 52,
         "equip": 5,
@@ -4997,6 +5083,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 52,
         "equip": 5,
@@ -5055,6 +5142,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 51,
         "equip": 5,
@@ -5112,6 +5200,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 53,
         "equip": 5,
@@ -5171,6 +5260,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 51,
         "equip": 5,
@@ -5230,6 +5320,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 58,
         "equip": 5,
@@ -5288,6 +5379,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 49,
         "equip": 5,
@@ -5345,6 +5437,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 54,
         "equip": 5,
@@ -5403,6 +5496,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 45,
         "equip": 5,
@@ -5461,6 +5555,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 42,
         "equip": 5,
@@ -5519,6 +5614,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 46,
         "equip": 5,
@@ -5575,6 +5671,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 57,
         "equip": 5,
@@ -5633,6 +5730,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 44,
         "equip": 5,
@@ -5690,6 +5788,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 44,
         "equip": 5,
@@ -5748,6 +5847,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 49,
         "equip": 5,
@@ -5806,6 +5906,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 46,
         "equip": 5,
@@ -5863,6 +5964,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 47,
         "equip": 5,
@@ -5921,6 +6023,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 56,
         "equip": 5,
@@ -5979,6 +6082,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 46,
         "equip": 5,
@@ -6036,6 +6140,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 57,
         "equip": 5,
@@ -6094,6 +6199,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 50,
         "equip": 5,
@@ -6152,6 +6258,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 44,
         "equip": 5,
@@ -6210,6 +6317,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 48,
         "equip": 5,
@@ -6266,6 +6374,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 51,
         "equip": 5,
@@ -6323,6 +6432,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 58,
         "equip": 5,
@@ -6379,6 +6489,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 50,
         "equip": 5,
@@ -6436,6 +6547,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 52,
         "equip": 5,
@@ -6492,6 +6604,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 52,
         "equip": 5,
@@ -6549,6 +6662,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 42,
         "equip": 5,
@@ -6606,6 +6720,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 47,
         "equip": 5,
@@ -6664,6 +6779,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 56,
         "equip": 5,
@@ -6721,6 +6837,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 58,
         "equip": 5,
@@ -6779,6 +6896,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 48,
         "equip": 5,
@@ -6836,6 +6954,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 47,
         "equip": 5,
@@ -6894,6 +7013,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 49,
         "equip": 5,
@@ -6951,6 +7071,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 53,
         "equip": 5,
@@ -7010,6 +7131,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 50,
         "equip": 5,
@@ -7069,6 +7191,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 44,
         "equip": 5,
@@ -7127,6 +7250,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 48,
         "equip": 5,
@@ -7185,6 +7309,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 49,
         "equip": 5,
@@ -7241,6 +7366,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 47,
         "equip": 5,
@@ -7299,6 +7425,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 54,
         "equip": 5,
@@ -7358,6 +7485,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 55,
         "equip": 5,
@@ -7417,6 +7545,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 55,
         "equip": 5,
@@ -7474,6 +7603,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 43,
         "equip": 5,
@@ -7533,6 +7663,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 60,
         "equip": 5,
@@ -7591,6 +7722,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 51,
         "equip": 5,
@@ -7649,6 +7781,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 53,
         "equip": 5,
@@ -7707,6 +7840,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 54,
         "equip": 5,
@@ -7765,6 +7899,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 54,
         "equip": 5,
@@ -7823,6 +7958,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 52,
         "equip": 5,
@@ -7882,6 +8018,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 49,
         "equip": 5,
@@ -7942,6 +8079,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 46,
         "equip": 5,
@@ -8001,6 +8139,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 49,
         "equip": 5,
@@ -8061,6 +8200,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 60,
         "equip": 5,
@@ -8119,6 +8259,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 57,
         "equip": 5,
@@ -8177,6 +8318,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 52,
         "equip": 5,
@@ -8236,6 +8378,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 49,
         "equip": 5,
@@ -8295,6 +8438,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 60,
         "equip": 5,
@@ -8354,6 +8498,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 54,
         "equip": 5,
@@ -8414,6 +8559,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 51,
         "equip": 5,
@@ -8473,6 +8619,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 53,
         "equip": 5,
@@ -8532,6 +8679,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 51,
         "equip": 5,
@@ -8590,6 +8738,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 45,
         "equip": 5,
@@ -8650,6 +8799,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 52,
         "equip": 5,
@@ -8710,6 +8860,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 53,
         "equip": 5,
@@ -8770,6 +8921,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 50,
         "equip": 5,
@@ -8828,6 +8980,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 54,
         "equip": 5,
@@ -8886,6 +9039,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 49,
         "equip": 5,
@@ -8945,6 +9099,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 42,
         "equip": 5,
@@ -9004,6 +9159,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 47,
         "equip": 5,
@@ -9062,6 +9218,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 55,
         "equip": 5,
@@ -9121,6 +9278,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 57,
         "equip": 5,
@@ -9179,6 +9337,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 56,
         "equip": 5,
@@ -9239,6 +9398,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 48,
         "equip": 5,
@@ -9297,6 +9457,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 43,
         "equip": 5,
@@ -9355,6 +9516,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 48,
         "equip": 5,
@@ -9414,6 +9576,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 56,
         "equip": 5,
@@ -9473,6 +9636,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 48,
         "equip": 5,
@@ -9532,6 +9696,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 57,
         "equip": 5,
@@ -9591,6 +9756,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 49,
         "equip": 5,
@@ -9650,6 +9816,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 47,
         "equip": 5,
@@ -9710,6 +9877,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 49,
         "equip": 5,
@@ -9767,6 +9935,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 50,
         "equip": 5,
@@ -9825,6 +9994,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 58,
         "equip": 5,
@@ -9882,6 +10052,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 48,
         "equip": 5,
@@ -9940,6 +10111,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 51,
         "equip": 5,
@@ -9998,6 +10170,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 52,
         "equip": 5,
@@ -10057,6 +10230,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 45,
         "equip": 5,
@@ -10115,6 +10289,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 46,
         "equip": 5,
@@ -10174,6 +10349,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 56,
         "equip": 5,
@@ -10232,6 +10408,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 55,
         "equip": 5,
@@ -10292,6 +10469,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 52,
         "equip": 5,
@@ -10351,6 +10529,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 44,
         "equip": 5,
@@ -10411,6 +10590,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 49,
         "equip": 5,
@@ -10474,6 +10654,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 58,
         "equip": 6,
@@ -10537,6 +10718,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 50,
         "equip": 6,
@@ -10600,6 +10782,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 51,
         "equip": 6,
@@ -10663,6 +10846,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 57,
         "equip": 6,
@@ -10726,6 +10910,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 50,
         "equip": 6,
@@ -10788,6 +10973,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 52,
         "equip": 6,
@@ -10851,6 +11037,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 55,
         "equip": 6,
@@ -10914,6 +11101,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 56,
         "equip": 6,
@@ -10977,6 +11165,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 56,
         "equip": 6,
@@ -11039,6 +11228,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 53,
         "equip": 6,
@@ -11102,6 +11292,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 56,
         "equip": 6,
@@ -11164,6 +11355,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 52,
         "equip": 6,
@@ -11226,6 +11418,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 54,
         "equip": 6,
@@ -11288,6 +11481,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 59,
         "equip": 6,
@@ -11350,6 +11544,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 59,
         "equip": 6,
@@ -11412,6 +11607,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 53,
         "equip": 6,
@@ -11475,6 +11671,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 56,
         "equip": 6,
@@ -11538,6 +11735,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 49,
         "equip": 6,
@@ -11601,6 +11799,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 59,
         "equip": 6,
@@ -11664,6 +11863,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 59,
         "equip": 6,
@@ -11726,6 +11926,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 61,
         "equip": 6,
@@ -11789,6 +11990,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 53,
         "equip": 6,
@@ -11852,6 +12054,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 59,
         "equip": 6,
@@ -11915,6 +12118,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 63,
         "equip": 6,
@@ -11978,6 +12182,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 54,
         "equip": 6,
@@ -12041,6 +12246,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 56,
         "equip": 6,
@@ -12104,6 +12310,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 51,
         "equip": 6,
@@ -12167,6 +12374,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 53,
         "equip": 6,
@@ -12230,6 +12438,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 59,
         "equip": 6,
@@ -12293,6 +12502,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 49,
         "equip": 6,
@@ -12356,6 +12566,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 61,
         "equip": 6,
@@ -12419,6 +12630,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 51,
         "equip": 6,
@@ -12482,6 +12694,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 52,
         "equip": 6,
@@ -12544,6 +12757,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 48,
         "equip": 6,
@@ -12607,6 +12821,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 46,
         "equip": 6,
@@ -12670,6 +12885,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 51,
         "equip": 6,
@@ -12732,6 +12948,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 62,
         "equip": 6,
@@ -12795,6 +13012,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 52,
         "equip": 6,
@@ -12858,6 +13076,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 53,
         "equip": 6,
@@ -12921,6 +13140,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 49,
         "equip": 6,
@@ -12983,6 +13203,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 49,
         "equip": 6,
@@ -13045,6 +13266,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 54,
         "equip": 6,
@@ -13108,6 +13330,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 55,
         "equip": 6,
@@ -13171,6 +13394,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 52,
         "equip": 6,
@@ -13234,6 +13458,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 58,
         "equip": 6,
@@ -13297,6 +13522,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 57,
         "equip": 6,
@@ -13360,6 +13586,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 45,
         "equip": 6,
@@ -13423,6 +13650,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 49,
         "equip": 6,
@@ -13486,6 +13714,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 58,
         "equip": 6,
@@ -13549,6 +13778,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 60,
         "equip": 6,
@@ -13612,6 +13842,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 56,
         "equip": 6,
@@ -13675,6 +13906,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 56,
         "equip": 6,
@@ -13738,6 +13970,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 62,
         "equip": 6,
@@ -13801,6 +14034,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 52,
         "equip": 6,
@@ -13864,6 +14098,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 61,
         "equip": 6,
@@ -13927,6 +14162,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 54,
         "equip": 6,
@@ -13990,6 +14226,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 60,
         "equip": 6,
@@ -14053,6 +14290,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 52,
         "equip": 6,
@@ -14116,6 +14354,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 49,
         "equip": 6,
@@ -14179,6 +14418,7 @@
       ],
       "actionCounts": {
         "talent": 1,
+        "continuePrologue": 1,
         "upgrade": 8,
         "craft": 52,
         "equip": 6,
