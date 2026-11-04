@@ -8,6 +8,7 @@ import {
   weight,
   capacity,
   has,
+  season,
 } from "../src/engine/game";
 import { items, facilityCost } from "../src/data";
 import { eventById } from "../src/data/events";
@@ -205,6 +206,7 @@ export class SurvivorAgent {
   }
   provision() {
     assert.equal(this.state.location, 0);
+    if(season(this.state).id==='winter'&&this.stock.coat)this.do('equip','coat');
     this.care();
     this.recover();
     if (
@@ -405,6 +407,11 @@ export class SurvivorAgent {
     this.upgrade("trap", 2);
     this.clear(4);
     this.home();
+    // 七天季节循环需要在首次冬季尽早准备已有配方的大衣。
+    if(has(this.state,items.coat.recipe!)){
+      this.craft('coat');
+      if(season(this.state).id==='winter')this.do('equip','coat');
+    }
     this.ensureResources({ roast: 5 });
     for (let i = 0; i < 5; i++) this.do("gift", "roast");
     assert.equal(this.state.friendship, 5);
@@ -433,8 +440,7 @@ export class SurvivorAgent {
     this.do("equip", "steelspear");
     this.clear(8);
     this.home();
-    this.ensureResources(items.coat.recipe!);
-    this.craft("coat");
+    if(!this.stock.coat){this.ensureResources(items.coat.recipe!);this.craft('coat');}
   }
   campaign() {
     this.prepareCampaign();

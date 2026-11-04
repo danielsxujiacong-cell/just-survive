@@ -85,10 +85,29 @@ export function random(s: State) {
   s.seed = (Math.imul(s.seed, 1664525) + 1013904223) >>> 0;
   return s.seed / 4294967296;
 }
+export function season(s: Pick<State, "time">) {
+  const elapsed = Math.floor(s.time / 24),
+    period = Math.floor(elapsed / 7),
+    index = period % 4;
+  const seasons = [
+    { id: "autumn", name: "秋季", temperature: 12 },
+    { id: "winter", name: "冬季", temperature: -5 },
+    { id: "spring", name: "春季", temperature: 20 },
+    { id: "summer", name: "夏季", temperature: 32 },
+  ];
+  return {
+    ...seasons[index],
+    index,
+    period,
+    day: (elapsed % 7) + 1,
+    daysUntilNext: 7 - (elapsed % 7),
+    next: seasons[(index + 1) % 4].name,
+  };
+}
 export function temperature(s: State) {
   const area = s.journey ? s.journey.to : s.location;
   return (
-    [20, 32, 12, -5][Math.floor((day(s) - 1) / 15) % 4] +
+    season(s).temperature +
     (hour(s) < 6 || hour(s) > 19 ? -8 : 4) +
     (area === 10 ? -25 : area === 11 ? 20 : 0) +
     (s.location === 0 && !s.journey ? s.facilities.fire * 5 : 0) +
@@ -132,6 +151,13 @@ export function advance(s: State, h: number, sleep = false) {
     left -= dt;
     const before = s.time;
     s.time += dt;
+    if (season({ time: before }).period !== season(s).period) {
+      const next = season(s);
+      log(
+        s,
+        `季节更替：进入${next.name}（基础${next.temperature}℃），本季持续7天。${next.id === "winter" ? "寒潮来临，请准备毛皮大衣、火把与营地火炉。" : next.id === "summer" ? "酷暑来临，请多带净水，留意高温失水。" : "留意昼夜温差，规划下一段旅程。"}`,
+      );
+    }
     const t = temperature(s);
     s.stats.hunger -= dt * (sleep ? 0.65 : 1.1);
     s.stats.water -= dt * (t > 35 ? 3 : 1.3);

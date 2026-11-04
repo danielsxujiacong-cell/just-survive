@@ -19,7 +19,7 @@ import {
 } from "./components/DeepPanels";
 import { maxHP } from "./engine/advanced";
 import { setAmbient } from "./audio/synth";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import {
   Compass,
   Flame,
@@ -59,6 +59,7 @@ import {
   inventory,
   has,
   temperature,
+  season,
   routeChecks,
 } from "./engine/game";
 import { IslandMap } from "./components/IslandMap";
@@ -113,6 +114,18 @@ export default function App({
     [category, setCategory] = useState("补给"),
     [bagFilter, setBagFilter] = useState("全部"),
     [notice, setNotice] = useState("");
+  const seasonPeriod = season(s).period;
+  const previousSeason = useRef(seasonPeriod);
+  const [seasonAlert, setSeasonAlert] = useState("");
+  useEffect(() => {
+    if (previousSeason.current !== seasonPeriod) {
+      const now = season(s);
+      setSeasonAlert(
+        `季节更替 · ${now.name}来临 · 基础${now.temperature}℃。${now.id === "winter" ? "准备大衣、火把和火炉，谨防失温。" : now.id === "summer" ? "高温会加速失水，请补足净水。" : "留意昼夜温差，继续探索。"}`,
+      );
+      previousSeason.current = seasonPeriod;
+    }
+  }, [seasonPeriod]);
   useEffect(() => {
     localStorage.setItem(storageKey, JSON.stringify(s));
   }, [s]);
@@ -357,20 +370,24 @@ export default function App({
           </button>
         </div>
       )}
+      {seasonAlert && (
+        <div className="season-alert" role="alert">
+          <span>{seasonAlert}</span>
+          <button aria-label="关闭季节提示" onClick={() => setSeasonAlert("")}>
+            知道了
+          </button>
+        </div>
+      )}
       <section className="status-bar">
         <div className="date">
           <small>存活时间</small>
           <strong>第 {String(day(s)).padStart(2, "0")} 天</strong>
           <span>
-            {
-              [
-                "春 · 万物初生",
-                "夏 · 烈日当空",
-                "秋 · 风起荒野",
-                "冬 · 凛冬将至",
-              ][Math.floor((day(s) - 1) / 15) % 4]
-            }
+            {season(s).name} · 第{season(s).day}/7天
           </span>
+          <small>
+            距{season(s).next}还有{season(s).daysUntilNext}天
+          </small>
         </div>
         <div className="clock">
           <div>

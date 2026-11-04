@@ -2906,3 +2906,4 @@ body:has(.memorial-modal) {
     display: none;
   }
 }
+.season-alert{margin:16px 30px 0;padding:15px 20px;border:1px solid #c7aa6c;border-left:4px solid #e1c18a;border-radius:5px;background:#493f27;color:#f0d5a1;display:flex;align-items:center;justify-content:space-between;gap:15px;font-size:13px;line-height:1.8}.season-alert button{white-space:nowrap}@media(max-width:800px){.season-alert{margin:12px 14px 0;padding:12px;font-size:11px}}

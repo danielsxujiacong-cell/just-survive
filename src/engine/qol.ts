@@ -10,6 +10,7 @@ import {
   log,
   random,
   routeChecks,
+  season,
 } from "./game";
 export type Route = "A" | "B" | "C" | "D";
 export const sharedStock = (s: State) => {
@@ -230,8 +231,7 @@ export function prepare(s: State, target: number) {
     choose(rangedIds.filter((k) => (s.storage[items[k].ammo!] || 0) > 0)) ||
     choose(rangedIds);
   const armor =
-    (target === 10 ||
-      (Math.floor((day(s) - 1) / 15) % 4 === 3 && target !== 11)) &&
+    (target === 10 || (season(s).id === "winter" && target !== 11)) &&
     s.storage.coat
       ? "coat"
       : choose(
