@@ -1,0 +1,53 @@
+{
+  "checkedAt": "2026-11-04T05:33:01.845Z",
+  "sourceSHA256": "de52b94289cd8be6c876c3f5a1e9c30a56328dd642e3ee1d1bc78d24dc590b75",
+  "productionUrl": "http://127.0.0.1:4173/",
+  "productionAssets": [
+    "index-CQDj33ql.js",
+    "index-GdYsaaip.css"
+  ],
+  "tool": "cua_repl Playwright locators in real IAB browser",
+  "productionChecks": {
+    "sixTalentSelectorAndSailorStarterRod": true,
+    "fourStageMarchRoadEventAndArrival": true,
+    "fishingMovingCursorTensionFeedbackAndCancel": true,
+    "limbAimPositionMovementSkillRootAndCooldown": true,
+    "eventChoicesAndCollectedDiaryReadInCodex": true,
+    "audioToggleStates": [
+      "true",
+      "false",
+      "true"
+    ]
+  },
+  "productionConsoleWarningsAndErrors": [],
+  "additionalDevelopmentChecks": {
+    "fishingThreeGreenReelsAndTreasureReward": true,
+    "monsterWeaknessCodex": true,
+    "responsiveNoHorizontalOverflow": {
+      "viewport": 390,
+      "document": 375,
+      "scrollWidth": 375
+    }
+  },
+  "developmentHotReloadErrorsWhileRewritingFiles": [
+    {
+      "level": "error",
+      "message": "[vite] Failed to reload /src/style.css. This could be due to syntax errors or importing non-existent modules. (see errors above)",
+      "timestamp": "2026-11-04T05:22:33.413Z",
+      "url": "http://127.0.0.1:5173/@vite/client"
+    },
+    {
+      "level": "error",
+      "message": "[vite] Failed to reload /src/App.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)",
+      "timestamp": "2026-11-04T05:22:33.414Z",
+      "url": "http://127.0.0.1:5173/@vite/client"
+    },
+    {
+      "level": "error",
+      "message": "[vite] Failed to reload /src/components/DeepPanels.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above)",
+      "timestamp": "2026-11-04T05:22:33.414Z",
+      "url": "http://127.0.0.1:5173/@vite/client"
+    }
+  ],
+  "finalProductionRecheckPassed": true
+}
